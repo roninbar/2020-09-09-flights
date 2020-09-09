@@ -8,9 +8,9 @@ import f from '../../../data/flights';
 })
 export class TableComponent implements OnInit {
   private readonly sortCol = 'CHLOC1T';
-  flights = f;
-  search = '';
   sortDirection = 1;
+  searchTerm = '';
+  flights = f;
 
   constructor() {}
 
@@ -36,7 +36,7 @@ export class TableComponent implements OnInit {
   }
 
   onKeyUpSearch({ target: { value } }) {
-    this.search = value;
+    this.searchTerm = value;
   }
 
   ngOnInit(): void {}

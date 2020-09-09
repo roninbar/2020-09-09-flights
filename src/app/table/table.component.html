@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <ng-container *ngFor="let flight of flights">
-            <tr *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())" [style.background-color]="bgColor(flight)">
+            <tr *ngIf="flight['CHLOCCT'].toLowerCase().includes(searchTerm.toLowerCase())" [style.background-color]="bgColor(flight)">
                 <td>{{flight['CHLOCCT']}}</td>
                 <td>{{flight['CHFLTN']}}</td>
                 <td>{{flight['CHOPERD']}}</td>
