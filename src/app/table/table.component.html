@@ -13,15 +13,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let flight of flights" [style.backgroundColor]="bgColor(flight)">
-            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHLOCCT']}}</td>
-            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHFLTN']}}</td>
-            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHOPERD']}}</td>
-            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHLOC1D']}}</td>
-            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHSTOL']}}</td>
-            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHPTOL']}}</td>
-            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHLOC1T']}}</td>
-            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHRMINE']}}</td>
-        </tr>
+        <ng-container *ngFor="let flight of flights">
+            <tr *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())" [style.background-color]="bgColor(flight)">
+                <td>{{flight['CHLOCCT']}}</td>
+                <td>{{flight['CHFLTN']}}</td>
+                <td>{{flight['CHOPERD']}}</td>
+                <td>{{flight['CHLOC1D']}}</td>
+                <td>{{flight['CHSTOL']}}</td>
+                <td>{{flight['CHPTOL']}}</td>
+                <td>{{flight['CHLOC1T']}}</td>
+                <td>{{flight['CHRMINE']}}</td>
+            </tr>
+        </ng-container>
     </tbody>
 </table>
