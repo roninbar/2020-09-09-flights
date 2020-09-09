@@ -1,0 +1,27 @@
+<input type="search" name="search" id="search" placeholder="Search" (keyup)="onKeyUpSearch($event)">
+<table>
+    <thead>
+        <tr>
+            <th class="chlocct">CHLOCCT</th>
+            <th class="chfltn">CHFLTN</th>
+            <th class="choperd">CHOPERD</th>
+            <th class="chloc1d">CHLOC1D</th>
+            <th class="chstol">CHSTOL</th>
+            <th class="chptol">CHPTOL</th>
+            <th class="chloc1t" (click)="onClickChloc1t()">CHLOC1T</th>
+            <th class="chrmine">CHRMINE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let flight of flights" [style.backgroundColor]="bgColor(flight)">
+            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHLOCCT']}}</td>
+            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHFLTN']}}</td>
+            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHOPERD']}}</td>
+            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHLOC1D']}}</td>
+            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHSTOL']}}</td>
+            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHPTOL']}}</td>
+            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHLOC1T']}}</td>
+            <td *ngIf="flight['CHLOCCT'].toLowerCase().includes(search.toLowerCase())">{{flight['CHRMINE']}}</td>
+        </tr>
+    </tbody>
+</table>
